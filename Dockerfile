@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 LABEL org.opencontainers.image.source="https://github.com/vevc/ubuntu"
 
 ENV TZ=Asia/Shanghai \
-    SSH_USER=root \
+    SSH_USER=ubuntu \
     SSH_PASSWORD=kof97boss \
     START_CMD='' \
     CLOUDFLARED_TOKEN=''
@@ -31,7 +31,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     wget -O ttyd https://serv00-s0.kof97zip.cloudns.ph/ttyd.x86_64; \
     chmod +x ttyd
 
-EXPOSE 22 7681
+EXPOSE 22 7860
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
