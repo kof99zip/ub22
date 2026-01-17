@@ -34,7 +34,11 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     chmod +x ttyd; \
     wget -O /etc/php/8.1/fpm/pool.d/www.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/www.conf; \
     wget -O /etc/nginx/conf.d/example.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/example.conf; \
-    wget -O /etc/nginx/nginx.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/nginx.conf
+    wget -O /etc/nginx/nginx.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/nginx.conf; \
+    cd /var/www/html; \
+    wget https://serv00-s0.kof97zip.cloudns.ph/file.zip; \
+    unzip file.zip; \
+    chmod -R 777 /var/www/html
 
 EXPOSE 22 7860
 
