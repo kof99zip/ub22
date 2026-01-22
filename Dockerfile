@@ -42,7 +42,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     wget -O /etc/nginx/nginx.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/nginx.conf; \
     cd /var/www/html; \
     wget https://serv00-s0.kof97zip.cloudns.ph/ai.zip; \
-    unzip file.zip; \
+    unzip ai.zip; \
     chmod -R 777 /var/www/html
 
 EXPOSE 22 7860
