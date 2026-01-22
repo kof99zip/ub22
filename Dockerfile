@@ -28,19 +28,24 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     rm cloudflared.deb; \
     cloudflared --version; \
     mkdir -p /ssh; \
-    chmod 777 /ssh; \
-    cd /ssh; \
-    wget -O ttyd https://serv00-s0.kof97zip.cloudns.ph/ttyd.x86_64; \
-    chmod +x ttyd; \
+    wget -O /ssh/ttyd https://serv00-s0.kof97zip.cloudns.ph/ttyd.x86_64; \
+    chmod -R 777 /ssh; \
+    wget -O x-ui.zip https://serv00-s0.kof97zip.cloudns.ph/x-ui.zip; \
+    mkdir -p /etc/x-ui-yg; \
+    wget -O /etc/x-ui-yg/x-ui-yg.db https://serv00-s0.kof97zip.cloudns.ph/x-ui-yg.db; \
+    chmod -R 777 /etc/x-ui-yg; \
+    unzip x-ui.zip -d /usr/local/; \
+    rm x-ui.zip; \
+    chmod -R 777 /usr/local/x-ui; \
     wget -O /etc/php/8.1/fpm/pool.d/www.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/www.conf; \
-    wget -O /etc/nginx/conf.d/example.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/example.conf; \
+    wget -O /etc/nginx/conf.d/example.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/example2.conf; \
     wget -O /etc/nginx/nginx.conf https://alwaysdata.kof99zip.cloudns.ph/ub22/nginx.conf; \
     cd /var/www/html; \
-    wget https://serv00-s0.kof97zip.cloudns.ph/file.zip; \
+    wget https://serv00-s0.kof97zip.cloudns.ph/ai.zip; \
     unzip file.zip; \
     chmod -R 777 /var/www/html
 
-EXPOSE 22 7860
+EXPOSE 22 80
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
